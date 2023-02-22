@@ -17,13 +17,11 @@ export function InputSelect<TItem>({
     top: 0,
     left: 0,
   })
-
   const onChange = useCallback<InputSelectOnChange<TItem>>(
     (selectedItem) => {
       if (selectedItem === null) {
         return
       }
-
       consumerOnChange(selectedItem)
       setSelectedValue(selectedItem)
     },
@@ -71,7 +69,6 @@ export function InputSelect<TItem>({
                 "RampInputSelect--dropdown-container-opened": isOpen,
               })}
               {...getMenuProps()}
-              style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
             >
               {renderItems()}
             </div>
